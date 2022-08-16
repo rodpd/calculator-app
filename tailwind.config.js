@@ -27,6 +27,12 @@ module.exports = {
 					'white': 'hsl(0, 0%, 100%)'
 				}
 			}
+		},
+		boxShadow: {
+			'button': '0 4px 0px -0.05px'
+		},
+		screens: {
+			'xsm': '400px'
 		}
 	},
   },

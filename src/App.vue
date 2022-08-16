@@ -1,5 +1,5 @@
 <template>
-<main class="p-[5%] sm:px-[20%] lg:px-[30%]">
+<main class="px-[3%] sm:py-[5%] sm:px-[20%] lg:px-[30%]">
 	<Calculator />
 </main>
 </template>
@@ -29,7 +29,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 
 html {

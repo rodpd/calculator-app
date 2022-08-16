@@ -4,18 +4,18 @@
 
 @layer components {
 	.t1-btn-bg-orange {
-		@apply bg-t1-bg-key-orange w-[100%] rounded-lg ;
+		@apply bg-t1-bg-key-orange w-[100%] rounded-lg shadow-button shadow-t1-bg-key-orangeshadow;
 	}
 	.t1-btn-bg-blue {
-		@apply bg-t1-bg-key-blue w-[100%] rounded-lg;
+		@apply bg-t1-bg-key-blue w-[100%] rounded-lg shadow-button shadow-t1-bg-key-blueshadow;
 	}
 	.t1-btn-bg-red {
-		@apply bg-t1-bg-key-red w-[100%] rounded-lg;
+		@apply bg-t1-bg-key-red w-[100%] rounded-lg shadow-button shadow-t1-bg-key-redshadow;
 	}
 	.t1-text-gray {
-		@apply font-['LeagueSpartan'] font-bold text-t1-text-gray text-[32px];
+		@apply font-['LeagueSpartan'] font-bold pt-2 text-t1-text-gray text-[32px];
 	}
 	.t1-text-white {
-		@apply font-['LeagueSpartan'] font-bold text-t1-text-white text-[32px];
+		@apply font-['LeagueSpartan'] font-bold pt-2 text-t1-text-white text-[32px];
 	}
   }

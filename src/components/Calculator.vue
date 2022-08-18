@@ -21,107 +21,113 @@
 	</span>
 </div>
 <div class="grid grid-cols-4 grid-rows-5 gap-4 p-3 rounded-lg xsm:gap-6 xsm:p-6 sm:gap-6 sm:p-6 bg-t1-bg-keypad">
-	<div class="col-span-1 col-start-1">
-		<button @click="updateNumber('7')" class="t1-btn-bg-orange t1-text-gray">
-			7
-		</button>
-	</div>
-	<div class="col-span-1 col-start-2">
-		<button @click="updateNumber('8')" class="t1-btn-bg-orange t1-text-gray">
-			8
-		</button>
-	</div>
-	<div class="col-span-1 col-start-3">
-		<button @click="updateNumber('9')" class="t1-btn-bg-orange t1-text-gray">
-			9
-		</button>
-	</div>
-	<div class="col-span-1 col-start-4">
-		<button @click="deleteDigit" class="t1-btn-bg-blue t1-text-white">
-			DEL
-		</button>
-	</div>
-	<div class="col-span-1 col-start-1">
-		<button @click="updateNumber('4')" class="t1-btn-bg-orange t1-text-gray">
-			4
-		</button>
-	</div>
-	<div class="col-span-1 col-start-2">
-		<button @click="updateNumber('5')" class="t1-btn-bg-orange t1-text-gray">
-			5
-		</button>
-	</div>
-	<div class="col-span-1 col-start-3">
-		<button @click="updateNumber('6')" class="t1-btn-bg-orange t1-text-gray">
-			6
-		</button>
-	</div>
-	<div class="col-span-1 col-start-4">
-		<button @click="setOperator('+')" class="t1-btn-bg-orange t1-text-gray">
-			+
-		</button>
-	</div>
-	<div class="col-span-1 col-start-1">
-		<button @click="updateNumber('1')" class="t1-btn-bg-orange t1-text-gray">
-			1
-		</button>
-	</div>
-	<div class="col-span-1 col-start-2">
-		<button @click="updateNumber('2')" class="t1-btn-bg-orange t1-text-gray">
-			2
-		</button>
-	</div>
-	<div class="col-span-1 col-start-3">
-		<button @click="updateNumber('3')" class="t1-btn-bg-orange t1-text-gray">
-			3
-		</button>
-	</div>
-	<div class="col-span-1 col-start-4">
-		<button @click="setOperator('-')" class="t1-btn-bg-orange t1-text-gray">
-			-
-		</button>
-	</div>
-	<div class="col-span-1 col-start-1">
-		<button @click="setDecimal" class="t1-btn-bg-orange t1-text-gray">
-			.
-		</button>
-	</div>
-	<div class="col-span-1 col-start-2">
-		<button @click="updateNumber('0')" class="t1-btn-bg-orange t1-text-gray">
-			0
-		</button>
-	</div>
-	<div class="col-span-1 col-start-3">
-		<button @click="setOperator('/')" class="t1-btn-bg-orange t1-text-gray">
-			/
-		</button>
-	</div>
-	<div class="col-span-1 col-start-4">
-		<button @click="setOperator('x')" class="t1-btn-bg-orange t1-text-gray">
-			x
-		</button>
-	</div>
-	<div class="col-span-2 col-start-1">
-		<button @click="reset" class="t1-btn-bg-blue t1-text-white">
-			RESET
-		</button>
-	</div>
-	<div class="col-span-2 col-start-3">
-		<button class="t1-btn-bg-red t1-text-white">
-			=
-		</button>
-	</div>
+	<KeypadButton v-for="(button, index) in buttons" :key="index" @buttonPressed="handleButtonPressed" :text="button.text" :color="button.color" :colsSpan="button.colsSpan" />
 </div>
 
 </template>
 
 <script setup>
 import {ref} from 'vue'
+import KeypadButton from './KeypadButton.vue';
+
+const buttons = [
+	{
+		text: '7',
+		color: 1,
+		colsSpan: 1
+	},
+	{
+		text: '8',
+		color: 1,
+		colsSpan: 1
+	},
+	{
+		text: '9',
+		color: 1,
+		colsSpan: 1
+	},
+	{
+		text: 'DEL',
+		color: 2,
+		colsSpan: 1
+	},
+	{
+		text: '4',
+		color: 1,
+		colsSpan: 1
+	},
+	{
+		text: '5',
+		color: 1,
+		colsSpan: 1
+	},
+	{
+		text: '6',
+		color: 1,
+		colsSpan: 1
+	},
+	{
+		text: '+',
+		color: 1,
+		colsSpan: 1
+	},
+	{
+		text: '1',
+		color: 1,
+		colsSpan: 1
+	},
+	{
+		text: '2',
+		color: 1,
+		colsSpan: 1
+	},
+	{
+		text: '3',
+		color: 1,
+		colsSpan: 1
+	},
+	{
+		text: '-',
+		color: 1,
+		colsSpan: 1
+	},
+	{
+		text: '.',
+		color: 1,
+		colsSpan: 1
+	},
+	{
+		text: '0',
+		color: 1,
+		colsSpan: 1
+	},
+	{
+		text: '/',
+		color: 1,
+		colsSpan: 1
+	},
+	{
+		text: 'x',
+		color: 1,
+		colsSpan: 1
+	},
+	{
+		text: 'RESET',
+		color: 2,
+		colsSpan: 2
+	},
+	{
+		text: '=',
+		color: 3,
+		colsSpan: 2
+	},
+	]
 
 const num = ref('0')
 const num1 = ref(null)
 const operator = ref(null)
 const decimal = ref(false)
+
 
 function updateNumber(number) {
 	if ( num.value == '0') {
@@ -144,9 +150,34 @@ function deleteDigit() {
 }
 
 function setOperator(newOperator) {
+	// se ja tiver 2 numeros, resolve antes de definir novo operador
+	if ( num1.value != null ) {
+		solve()
+	}
 	operator.value = newOperator
 	num1.value = num.value
 	num.value = 0
+}
+
+function solve() {
+	console.log(num.value)
+	console.log(num1.value)
+	if ( num1.value != null ) {
+		let num2 = num.value
+		if ( operator.value == '+') {
+			num.value = ( parseFloat(num1.value) + parseFloat(num2) ).toString()
+		}
+		else if ( operator.value == '-') {
+			num.value = ( parseFloat(num1.value) - parseFloat(num2) ).toString()
+		}
+		else if ( operator.value == 'x') {
+			num.value = ( parseFloat(num1.value) * parseFloat(num2) ).toString()
+		}
+		else if ( operator.value == '/') {
+			num.value = ( parseFloat(num1.value) / parseFloat(num2) ).toString()
+		}
+		num1.value = null
+	}
 }
 
 function reset() {
@@ -155,6 +186,28 @@ function reset() {
 	num1.value = null
 	operator.value = null
 	decimal.value = false
+}
+
+function handleButtonPressed(button) {
+	button = button.text
+	if ( button >= '1' && button <= '9') {
+		updateNumber(button)
+	}
+	else if ( button == '.') {
+		setDecimal()
+	}
+	else if ( button == "DEL") {
+		deleteDigit()
+	}
+	else if ( button == "RESET") {
+		reset()
+	}
+	else if ( button == "=") {
+		solve()
+	}
+	else {
+		setOperator(button)
+	}
 }
 
 </script>

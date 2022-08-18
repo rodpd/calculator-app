@@ -10,6 +10,7 @@
   "dependencies": {
     "autoprefixer": "^10.4.8",
     "core-js": "^3.8.3",
+    "pinia": "^2.0.18",
     "postcss": "^8.4.16",
     "vue": "^3.2.13"
   },
@@ -26,7 +27,8 @@
   "eslintConfig": {
     "root": true,
     "env": {
-      "node": true
+      "node": true,
+      "vue/setup-compiler-macros": true
     },
     "extends": [
       "plugin:vue/vue3-essential",
@@ -36,8 +38,9 @@
       "parser": "@babel/eslint-parser"
     },
     "rules": {
-		"vue/multi-word-component-names": 0
-	}
+      "vue/multi-word-component-names": 0,
+      "no-unused-vars": 0
+    }
   },
   "browserslist": [
     "> 1%",

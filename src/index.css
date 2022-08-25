@@ -18,4 +18,34 @@
 	.t1-text-white {
 		@apply font-['LeagueSpartan'] font-bold pt-2 text-t1-text-white text-[32px];
 	}
+	.t2-btn-bg-orange {
+		@apply bg-t2-bg-key-orange w-[100%] rounded-lg shadow-button shadow-t2-bg-key-orangeshadow;
+	}
+	.t2-btn-bg-blue {
+		@apply bg-t2-bg-key-blue w-[100%] rounded-lg shadow-button shadow-t2-bg-key-blueshadow;
+	}
+	.t2-btn-bg-red {
+		@apply bg-t2-bg-key-red w-[100%] rounded-lg shadow-button shadow-t2-bg-key-redshadow;
+	}
+	.t2-text-gray {
+		@apply font-['LeagueSpartan'] font-bold pt-2 text-t2-text-gray text-[32px];
+	}
+	.t2-text-white {
+		@apply font-['LeagueSpartan'] font-bold pt-2 text-t2-text-white text-[32px];
+	}
+	.t3-btn-bg-orange {
+		@apply bg-t3-bg-key-orange w-[100%] rounded-lg shadow-button shadow-t3-bg-key-orangeshadow;
+	}
+	.t3-btn-bg-blue {
+		@apply bg-t3-bg-key-blue w-[100%] rounded-lg shadow-button shadow-t3-bg-key-blueshadow;
+	}
+	.t3-btn-bg-red {
+		@apply bg-t3-bg-key-red w-[100%] rounded-lg shadow-button shadow-t3-bg-key-redshadow;
+	}
+	.t3-text-gray {
+		@apply font-['LeagueSpartan'] font-bold pt-2 text-t3-text-gray text-[32px];
+	}
+	.t3-text-white {
+		@apply font-['LeagueSpartan'] font-bold pt-2 text-t3-text-white text-[32px];
+	}
   }

@@ -21,6 +21,8 @@ module.exports = {
 	'bg-t3-bg-screen',
 	'bg-t3-bg-toggle',
 	'bg-t3-bg-keypad',
+	'col-span-1',
+	'col-span-2'
   ],
   theme: {
     extend: {

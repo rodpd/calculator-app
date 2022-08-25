@@ -170,6 +170,7 @@ function setOperator(newOperator) {
 		solve()
 	}
 	operator.value = newOperator
+	decimal.value = false
 	num1.value = num.value
 	num.value = 0
 }

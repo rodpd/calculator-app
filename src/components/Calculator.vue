@@ -33,108 +33,14 @@ import KeypadButton from './KeypadButton.vue';
 
 const store = useThemesStore()
 
-const buttons = [
-	{
-		text: '7',
-		color: 1,
-		colsSpan: 1
-	},
-	{
-		text: '8',
-		color: 1,
-		colsSpan: 1
-	},
-	{
-		text: '9',
-		color: 1,
-		colsSpan: 1
-	},
-	{
-		text: 'DEL',
-		color: 2,
-		colsSpan: 1
-	},
-	{
-		text: '4',
-		color: 1,
-		colsSpan: 1
-	},
-	{
-		text: '5',
-		color: 1,
-		colsSpan: 1
-	},
-	{
-		text: '6',
-		color: 1,
-		colsSpan: 1
-	},
-	{
-		text: '+',
-		color: 1,
-		colsSpan: 1
-	},
-	{
-		text: '1',
-		color: 1,
-		colsSpan: 1
-	},
-	{
-		text: '2',
-		color: 1,
-		colsSpan: 1
-	},
-	{
-		text: '3',
-		color: 1,
-		colsSpan: 1
-	},
-	{
-		text: '-',
-		color: 1,
-		colsSpan: 1
-	},
-	{
-		text: '.',
-		color: 1,
-		colsSpan: 1
-	},
-	{
-		text: '0',
-		color: 1,
-		colsSpan: 1
-	},
-	{
-		text: '/',
-		color: 1,
-		colsSpan: 1
-	},
-	{
-		text: 'x',
-		color: 1,
-		colsSpan: 1
-	},
-	{
-		text: 'RESET',
-		color: 2,
-		colsSpan: 2
-	},
-	{
-		text: '=',
-		color: 3,
-		colsSpan: 2
-	},
-	]
-
+const { buttons } = require('../data/buttons')
 
 localStorage['theme'] = 1
-
 
 const num = ref('0')
 const num1 = ref(null)
 const operator = ref(null)
 const decimal = ref(false)
-
 
 const calc = ref(null)
 const themeText = ref(null)

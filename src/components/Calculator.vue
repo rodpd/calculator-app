@@ -16,7 +16,7 @@
 	</div>
 </div>
 <div class="bg-t1-bg-screen mb-[4%] rounded-lg" ref="screenNumberBackground">
-	<span class="flex justify-end py-6 pr-6 text-5xl t1-text-white" ref="screenNumber">
+	<span class="flex justify-end py-6 pr-6 overflow-x-auto text-5xl t1-text-white" ref="screenNumber">
 		{{num}}
 	</span>
 </div>
@@ -55,6 +55,7 @@ function updateNumber(number) {
 		num.value = number
 	}
 	else {
+		console.log(screenNumber.value.style.width)
 		num.value += number
 	}
 }
